@@ -238,35 +238,6 @@ class _DetailPageState extends State<DetailPage> {
         ),
         const SizedBox(height: 16),
         // Button with Flickr logo that opens the URL in the browser
-        ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.black, // Black background for the button
-            padding: const EdgeInsets.all(12),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8),
-            ),
-          ),
-          onPressed: () async {
-            try {
-              await _openInBrowser(photo.photoLink);
-            } catch (e) {
-              print('Error: $e');
-            }
-          },
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Image.network(
-                'https://upload.wikimedia.org/wikipedia/commons/9/9b/Flickr_logo.png', // Flickr logo URL
-                height: 24, // Set the height of the logo
-                width: 24, // Set the width of the logo
-              ),
-              const SizedBox(width: 10),
-              const Text('View on Flickr',
-                  style: TextStyle(color: Colors.white)), // Button label
-            ],
-          ),
-        ),
       ],
     );
   }
